@@ -118,3 +118,34 @@ We will build a predictive model for the famous `Pima Indians Diabetes` dataset 
 
 
 In `data` folder, you will find `training.csv` and `test.csv`. We will use `training.csv` to find the right hyperparameters of a Gaussian kernel SVM.
+
+
+Now, we will tune a kernel RBF SVM with a grid search over $C$ and $\gamma$ parameters. To use it 
+
+```console
+python train.py -h
+usage: train.py [-h] N namefile
+
+Train and save a model over the PIMA Indian Diabete
+
+positional arguments:
+  N           an integer for the grid search
+  namefile    filename
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+Typically with 
+
+```console
+python train.py 10 final_model.pk
+```
+
+will search over a $10 \times 10$ grid logspace over $C$ and $\gamma^$.
+
+
+
+
+
+

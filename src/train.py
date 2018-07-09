@@ -1,6 +1,6 @@
 """file : train.py
 """
-
+import argparse
 
 import pandas as pd 
 import numpy as np 
@@ -14,6 +14,20 @@ from sklearn.svm import SVC
 
 # metric for machine learning 
 from sklearn.model_selection import cross_val_score
+
+# pickle for model saving
+import dill as pickle
+
+
+parser = argparse.ArgumentParser(description='Train and save a model over the PIMA Indian Diabete')
+parser.add_argument('integer', metavar='N', type=int, nargs=1,
+                    help='an integer for the grid search')
+parser.add_argument('filename', metavar='namefile', type=str, nargs=1,
+                    help='filename')
+args = parser.parse_args()
+
+
+
 
 # start with downloading data
 TRAIN = pd.read_csv('../data/training.csv') 
@@ -35,6 +49,7 @@ def cv_score_SVM(params, SVC, X, y):
 # grid search over params
 
 
+
 def search_best_params(SVC, X, y, n_C = 10, n_gamma = 10):
     params_dict = {"C" : np.linspace(1.2,1.46,n_C), "gamma" : np.linspace(-5.2,-4.9, n_gamma)}
     best_CV = 0
@@ -47,5 +62,16 @@ def search_best_params(SVC, X, y, n_C = 10, n_gamma = 10):
     cl = SVC(C = best_params[0], gamma = best_params[1])
     cl.fit(X, y)
     return best_params, cl 
+
+
+n_C = args.integer[0]
+n_gamma = args.integer[0]
+
+name = args.filename[0]
+
+if __name__ == '__main__':
+    best_params, final_model = search_best_params(SVC, X, y, n_C, n_gamma)
+    with open('../models/'+name,'wb') as nfile:
+        pickle.dump(final_model, nfile)
 
 

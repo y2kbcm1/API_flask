@@ -117,3 +117,4 @@ We will build a predictive model for the famous `Pima Indians Diabetes` dataset 
 | 6             | 148           | 72                 | 35                         | 0               | 33.6           | 0.627                      | 50    | 1         |
 
 
+In `data` folder, you will find `training.csv` and `test.csv`. We will use `training.csv` to find the right hyperparameters of a Gaussian kernel SVM.

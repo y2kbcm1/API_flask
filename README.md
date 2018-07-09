@@ -45,6 +45,20 @@ Start with creating a `conda` environment with `flask` and `gunicorn`
 conda create --name FlaskAPI python=3.6
 ```
 
+and activate it 
+
+```console
+conda activate FlaskAPI
+```
+
+and now install `flask` and `gunicorn`
+
+```console
+pip install flask gunicorn
+```
+This will install also `Werkzeug`, `Jinja2`, `click`, `MarkupSafe`and `itsdangerous`. But one mai advantage of `Flask`is that it is a very light environment.
+
+
 
 
 

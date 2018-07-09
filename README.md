@@ -1,7 +1,7 @@
 # A gentle guide to API building in Machine Learning with Python and Flask module
 
 
-![Flask logo](/img/flask.PNG)
+![Flask logo](/img/flask.png)
 
 ## Why do we need API's in Machine Learning ?
 

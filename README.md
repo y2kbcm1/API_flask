@@ -59,6 +59,29 @@ pip install flask gunicorn
 This will install also `Werkzeug`, `Jinja2`, `click`, `MarkupSafe`and `itsdangerous`. But one mai advantage of `Flask`is that it is a very light environment.
 
 
+### First Hello application 
+
+Now in `src`, you will find a `hello-ekimetrics.py` Python early implementation of a simple `Flask` application. That we detail here :
+
+```python
+""" File : hello_ekimetrics.py 
+"""
+
+from flask import Flask 
+
+app = Flask(__name__)
+
+@app.route('users/<string:username>')
+def hello_ekimetrics(username=None):
+    return("Welcome {} to Ekimetrics!".format(username))
+```
+
+Now execute the Python file
+
+```console
+python hello_ekimetrics.py
+```
+
 
 
 

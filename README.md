@@ -108,3 +108,12 @@ and you should see something like :
 
 ## First ML API with Flask
 
+Still in `FlaskAPI` environment, install some Python module to train and evaluate a predictive model.
+
+We will build a predictive model for the famous `Pima Indians Diabetes` dataset (see below) 
+
+| `pregnancies` | `Glucose`     | `BloodPressure`    | `SkinThickness`            | `Insulin`       | `BMI`          | `DiabetesPedigreeFunction` | `Age` | `Outcome` |
+|--------------:|--------------:|-------------------:|---------------------------:|----------------:|---------------:|---------------------------:|------:|----------:|
+| 6             | 148           | 72                 | 35                         | 0               | 33.6           | 0.627                      | 50    | 1         |
+
+

@@ -1,5 +1,8 @@
 # A gentle guide to API building in Machine Learning with Python and Flask module
 
+
+![Flask logo](/img/flask.PNG)
+
 ## Why do we need API's in Machine Learning ?
 
 As we design complex predictive models based on Machine Learning or Deep Learning, we need
@@ -71,9 +74,12 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('users/<string:username>')
+@app.route('/users/<string:username>')
 def hello_ekimetrics(username=None):
     return("Welcome {} to Ekimetrics!".format(username))
+
+if __name__ == "__main__":
+    app.run()
 ```
 
 Now execute the Python file
@@ -82,6 +88,23 @@ Now execute the Python file
 python hello_ekimetrics.py
 ```
 
+and you should see something like :
+
+```console
+(FlaskAPI) C:\git\API_FLASK\src>python hello_ekimetrics.py
+ * Serving Flask app "hello_ekimetrics" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ ```
+
+ Now go to http://127.0.0.1:5000/users/someone, and you should see 
 
 
+![Flask logo](/img/welcome.PNG)
+
+
+## First ML API with Flask
 

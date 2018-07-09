@@ -39,6 +39,12 @@ force you to things the way Flask developers want it. There are obviously tons o
 
 ### Flask set up
 
-Start with creating a `conda` environment. 
+Start with creating a `conda` environment with `flask` and `gunicorn`
+
+```console
+conda create --name FlaskAPI python=3.6
+```
+
+
 
 

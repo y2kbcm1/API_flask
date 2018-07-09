@@ -110,6 +110,12 @@ and you should see something like :
 
 Still in `FlaskAPI` environment, install some Python module to train and evaluate a predictive model.
 
+Notably 
+
+```console
+pip install scipy numpy pandas scikit-learn dill
+```
+
 We will build a predictive model for the famous `Pima Indians Diabetes` dataset (see below) 
 
 | `pregnancies` | `Glucose`     | `BloodPressure`    | `SkinThickness`            | `Insulin`       | `BMI`          | `DiabetesPedigreeFunction` | `Age` | `Outcome` |
@@ -120,7 +126,7 @@ We will build a predictive model for the famous `Pima Indians Diabetes` dataset 
 In `data` folder, you will find `training.csv` and `test.csv`. We will use `training.csv` to find the right hyperparameters of a Gaussian kernel SVM.
 
 
-Now, we will tune a kernel RBF SVM with a grid search over $C$ and $\gamma$ parameters. To use it 
+Now, we will tune a kernel RBF SVM with a grid search over `C` and `gamma` parameters. To use it 
 
 ```console
 python train.py -h
@@ -142,7 +148,13 @@ Typically with
 python train.py 10 final_model.pk
 ```
 
-will search over a $10 \times 10$ grid logspace over $C$ and $\gamma^$.
+will search over a 10 x 10 grid logspace over `C` and `gamma`, find the best parameters with respect to the median CV error (with K=5 folds), retrain over the full training
+basis with respect to the best parameters and saves the models to `models\final_model.pk`
+
+
+## Loading the model in the flask API
+
+Now that we have saved a good SVM for model prediction over the training dataset, we want to incorporate this into a Flask API.
 
 
 

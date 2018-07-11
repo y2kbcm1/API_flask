@@ -156,7 +156,11 @@ basis with respect to the best parameters and saves the models to `models\final_
 
 Now that we have saved a good SVM for model prediction over the training dataset, we want to incorporate this into a Flask API.
 
+Before that, let's check it does work to load the serialized model 
 
+```console
+python predict.py final_model.pk 6 148 72 35 0 33.6 0.627 50
+```
 
 
 
